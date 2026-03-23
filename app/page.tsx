@@ -3,37 +3,65 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 
+type Niveau = "Novice" | "Intermédiaire" | "Confirmé";
+
 type Balade = {
   id: number;
   titre: string;
   date: string;
+  km: string;
+  niveau: Niveau;
 };
 
 export default function HomePage() {
   const [balades, setBalades] = useState<Balade[]>([
-    { id: 1, titre: "Balade Ardennes", date: "Dimanche 14 avril" },
-    { id: 2, titre: "Tour des lacs", date: "Samedi 20 avril" },
-    { id: 3, titre: "Forêt et petites routes", date: "Dimanche 28 avril" },
+    {
+      id: 1,
+      titre: "Sortie entre potes",
+      date: "Ce week-end",
+      km: "120 km",
+      niveau: "Novice",
+    },
+    {
+      id: 2,
+      titre: "Virée coucher de soleil",
+      date: "Vendredi soir",
+      km: "180 km",
+      niveau: "Intermédiaire",
+    },
+    {
+      id: 3,
+      titre: "Roadtrip montagne",
+      date: "Prochain dimanche",
+      km: "260 km",
+      niveau: "Confirmé",
+    },
   ]);
 
   const [showForm, setShowForm] = useState(false);
   const [titre, setTitre] = useState("");
   const [date, setDate] = useState("");
+  const [km, setKm] = useState("");
+  const [niveau, setNiveau] = useState<Niveau>("Novice");
 
   function ajouterBalade(e: React.FormEvent) {
     e.preventDefault();
 
-    if (!titre.trim() || !date.trim()) return;
+    if (!titre.trim() || !date.trim() || !km.trim()) return;
 
     const nouvelleBalade: Balade = {
       id: Date.now(),
       titre,
       date,
+      km,
+      niveau,
     };
 
     setBalades([nouvelleBalade, ...balades]);
     setTitre("");
     setDate("");
+    setKm("");
+    setNiveau("Novice");
     setShowForm(false);
   }
 
@@ -68,6 +96,24 @@ export default function HomePage() {
               className={styles.input}
             />
 
+            <input
+              type="text"
+              placeholder="Distance (ex: 150 km)"
+              value={km}
+              onChange={(e) => setKm(e.target.value)}
+              className={styles.input}
+            />
+
+            <select
+              value={niveau}
+              onChange={(e) => setNiveau(e.target.value as Niveau)}
+              className={styles.input}
+            >
+              <option value="Novice">Novice</option>
+              <option value="Intermédiaire">Intermédiaire</option>
+              <option value="Confirmé">Confirmé</option>
+            </select>
+
             <button type="submit" className={styles.submitButton}>
               Ajouter
             </button>
@@ -80,6 +126,21 @@ export default function HomePage() {
               <div className={styles.cardTop}>
                 <h2>{balade.titre}</h2>
                 <p>{balade.date}</p>
+
+                <div className={styles.infoRow}>
+                  <span className={styles.badge}>{balade.km}</span>
+                  <span
+                    className={`${styles.badge} ${
+                      balade.niveau === "Novice"
+                        ? styles.novice
+                        : balade.niveau === "Intermédiaire"
+                        ? styles.intermediaire
+                        : styles.confirme
+                    }`}
+                  >
+                    {balade.niveau}
+                  </span>
+                </div>
               </div>
 
               <div className={styles.actions}>

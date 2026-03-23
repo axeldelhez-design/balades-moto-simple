@@ -6,14 +6,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
 }
-
-/* ===== Carte principale ===== */
 
 .overlay {
   width: 100%;
@@ -27,8 +24,6 @@
   color: white;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
-
-/* ===== Titres ===== */
 
 .title {
   margin: 0;
@@ -47,8 +42,6 @@
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.88);
 }
-
-/* ===== Bouton créer ===== */
 
 .createButton {
   width: 100%;
@@ -69,8 +62,6 @@
   transform: translateY(-1px);
   opacity: 0.95;
 }
-
-/* ===== Formulaire ===== */
 
 .form {
   display: flex;
@@ -105,15 +96,11 @@
   cursor: pointer;
 }
 
-/* ===== Liste ===== */
-
 .list {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-
-/* ===== Carte balade ===== */
 
 .card {
   background: rgba(0, 0, 0, 0.28);
@@ -137,7 +124,40 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
-/* ===== Boutons actions ===== */
+.infoRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.novice {
+  background: rgba(34, 197, 94, 0.22);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.intermediaire {
+  background: rgba(245, 158, 11, 0.22);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.confirme {
+  background: rgba(239, 68, 68, 0.22);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
 
 .actions {
   display: flex;
