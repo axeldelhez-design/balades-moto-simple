@@ -1,0 +1,93 @@
+.page {
+  min-height: 100vh;
+
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("/route-moto.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.overlay {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 20px;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 8px 0 20px;
+  opacity: 0.9;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.cardTop h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.cardTop p {
+  margin: 6px 0 12px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  flex: 1;
+  min-width: 90px;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.yes {
+  background: #22c55e;
+  color: white;
+}
+
+.maybe {
+  background: #f59e0b;
+  color: white;
+}
+
+.no {
+  background: #ef4444;
+  color: white;
+}

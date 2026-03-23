@@ -1,0 +1,179 @@
+.page {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+    url("/route-moto.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* ===== Carte principale ===== */
+
+.overlay {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 22px;
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Titres ===== */
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 10px 0 22px;
+  text-align: center;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ===== Bouton créer ===== */
+
+.createButton {
+  width: 100%;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  background: white;
+  color: #111827;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.createButton:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* ===== Formulaire ===== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.submitButton {
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== Liste ===== */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===== Carte balade ===== */
+
+.card {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.cardTop h2 {
+  margin: 0;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cardTop p {
+  margin: 8px 0 14px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ===== Boutons actions ===== */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  flex: 1;
+  min-width: 90px;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 10px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.actions button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.yes {
+  background: #22c55e;
+  color: white;
+}
+
+.maybe {
+  background: #f59e0b;
+  color: white;
+}
+
+.no {
+  background: #ef4444;
+  color: white;
+}
