@@ -17,45 +17,64 @@ const balades: Balade[] = [
   {
     id: 2,
     titre: "Balade Namur",
-    description: "Sortie tranquille.",
+    description: "Sortie tranquille pour profiter calmement.",
     km: 65,
     niveau: "novice",
   },
   {
     id: 3,
     titre: "Balade Dinant",
-    description: "Plus technique et plus longue.",
+    description: "Parcours plus long et un peu plus technique.",
     km: 180,
     niveau: "confirmé",
   },
 ];
 
+function couleurNiveau(niveau: Balade["niveau"]) {
+  if (niveau === "novice") return "#dcfce7";
+  if (niveau === "intermédiaire") return "#fef9c3";
+  return "#fee2e2";
+}
+
+function texteNiveau(niveau: Balade["niveau"]) {
+  if (niveau === "novice") return "Novice";
+  if (niveau === "intermédiaire") return "Intermédiaire";
+  return "Confirmé";
+}
+
 export default function Home() {
   return (
-    <main style={{ padding: 20 }}>
-      <h1>Balades moto</h1>
+    <main style={{ padding: "20px", maxWidth: "900px", margin: "0 auto" }}>
+      <h1 style={{ fontSize: "32px", marginBottom: "20px" }}>Balades moto</h1>
 
       {balades.map((balade) => (
         <div
           key={balade.id}
           style={{
             border: "1px solid #ddd",
-            borderRadius: 10,
-            padding: 15,
-            marginBottom: 15,
+            borderRadius: "12px",
+            padding: "16px",
+            marginBottom: "16px",
+            backgroundColor: "#fff",
           }}
         >
-          <h2>{balade.titre}</h2>
-          <p>{balade.description}</p>
+          <h2 style={{ marginBottom: "8px" }}>{balade.titre}</h2>
 
-          <div style={{ marginTop: 10 }}>
+          <p style={{ marginBottom: "12px", color: "#555" }}>
+            {balade.description}
+          </p>
+
+          <div style={{ marginTop: "10px" }}>
             <span
               style={{
-                background: "#e0f2fe",
-                padding: "5px 10px",
-                borderRadius: 20,
-                marginRight: 8,
+                backgroundColor: "#dbeafe",
+                color: "#1d4ed8",
+                padding: "6px 12px",
+                borderRadius: "999px",
+                marginRight: "10px",
                 display: "inline-block",
+                fontSize: "14px",
+                fontWeight: 500,
               }}
             >
               {balade.km} km
@@ -63,22 +82,15 @@ export default function Home() {
 
             <span
               style={{
-                background:
-                  balade.niveau === "novice"
-                    ? "#dcfce7"
-                    : balade.niveau === "intermédiaire"
-                    ? "#fef9c3"
-                    : "#fee2e2",
-                padding: "5px 10px",
-                borderRadius: 20,
+                backgroundColor: couleurNiveau(balade.niveau),
+                padding: "6px 12px",
+                borderRadius: "999px",
                 display: "inline-block",
+                fontSize: "14px",
+                fontWeight: 500,
               }}
             >
-              {balade.niveau === "novice"
-                ? "Novice"
-                : balade.niveau === "intermédiaire"
-                ? "Intermédiaire"
-                : "Confirmé"}
+              {texteNiveau(balade.niveau)}
             </span>
           </div>
         </div>
